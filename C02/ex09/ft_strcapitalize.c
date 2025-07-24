@@ -19,6 +19,7 @@ int	ft_upcase(char c)
 
 char	*ft_strcapitalize(char *str)
 {
+	char *s = str;
 	int i = 0;
 	int flag = 1;
 
@@ -26,10 +27,10 @@ char	*ft_strcapitalize(char *str)
 	{
 		if(ft_numeric(str[i]))
 		{
-			if(flag && ft_lowcase(str[i]))
-				str[i] -= 32;
-			else if(!flag && ft_upcase(str[i]))
-				str[i] += 32;
+			if(flag && ft_lowcase(s[i]))
+				s[i] -= 32;
+			else if(!flag && ft_upcase(s[i]))
+				s[i] += 32;
 			flag = 0;
 		}
 		else
@@ -38,3 +39,10 @@ char	*ft_strcapitalize(char *str)
 	}
 	return (str);
 }
+
+/*int main()
+{
+	char yahya[] = "yahya wa3r bzaf";
+	ft_strcapitalize(yahya);
+	printf("%s", yahya);
+}*/
